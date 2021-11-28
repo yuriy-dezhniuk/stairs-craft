@@ -31,6 +31,61 @@
 
 	<!-- Favicon  -->
     <link rel="icon" href="images/favicon.jpg">
+    <style>
+        /* The grid: Four equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 25%;
+            padding: 10px;
+        }
+        
+        /* Style the images inside the grid */
+        .column img {
+            opacity: 0.8; 
+            cursor: pointer; 
+        }
+        
+        .column img:hover {
+            opacity: 1;
+        }
+        
+        /* Clear floats after the columns */
+        .row1:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        /* The expanding image container */
+        .container1 {
+            position: relative;
+            display: none;
+        }
+        
+        /* Expanding image text */
+        #imgtext {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: white;
+            font-size: 20px;
+        }
+        
+        /* Closable button inside the expanded image */
+        .closebtn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: white;
+            font-size: 35px;
+            cursor: pointer;
+        }
+        @media screen and (max-width: 992px) {
+            #expandedImg, #expandedImg1 {
+                width:100%;
+            }
+        }
+        </style>
 </head>
 <body data-spy="scroll" data-target=".fixed-top">
 
@@ -159,37 +214,39 @@
                     <h2>Фотогалерея наших работ</h2>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="grid">
-                        <div class="element-item development">
-                            <a class="popup-with-move-anim" href="#project-1"><div class="element-item-overlay"></div><img src="images/project-1.jpg" alt="alternative"></a>
-                        </div>
-                        <div class="element-item development">
-                            <a class="popup-with-move-anim" href="#project-2"><div class="element-item-overlay"></div><img src="images/project-2.jpg" alt="alternative"></a>
-                        </div>
-                        <div class="element-item design development marketing">
-                            <a class="popup-with-move-anim" href="#project-3"><div class="element-item-overlay"></div><img src="images/project-3.jpg" alt="alternative"></a>
-                        </div>
-                        <div class="element-item design development marketing">
-                            <a class="popup-with-move-anim" href="#project-4"><div class="element-item-overlay"></div><img src="images/project-4.jpg" alt="alternative"></a>
-                        </div>
-                        <div class="element-item design development marketing seo">
-                            <a class="popup-with-move-anim" href="#project-5"><div class="element-item-overlay"></div><img src="images/project-5.jpg" alt="alternative"></a>
-                        </div>
-                        <div class="element-item design marketing seo">
-                            <a class="popup-with-move-anim" href="#project-6"><div class="element-item-overlay"></div><img src="images/project-6.jpg" alt="alternative"></a>
-                        </div>
-                        <div class="element-item design marketing">
-                            <a class="popup-with-move-anim" href="#project-7"><div class="element-item-overlay"></div><img src="images/project-7.jpg" alt="alternative"></a>
-                        </div>
-                        <div class="element-item design marketing">
-                            <a class="popup-with-move-anim" href="#project-8"><div class="element-item-overlay"></div><img src="images/project-8.jpg" alt="alternative"></a>
-                        </div>
-                    </div> <!-- end of grid -->
-                    <!-- end of filter -->
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
+                <!-- The four columns -->
+                <div class="row1">
+                    <div class="column">
+                        <img src="images/project-1.jpg" alt="project-1" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                    <div class="column">
+                        <img src="images/project-2.jpg" alt="project-2" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                    <div class="column">
+                        <img src="images/project-3.jpg" alt="project-3" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                    <div class="column">
+                        <img src="images/project-4.jpg" alt="project-4" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                    <div class="column">
+                        <img src="images/project-5.jpg" alt="project-5" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                    <div class="column">
+                        <img src="images/project-6.jpg" alt="project-6" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                    <div class="column">
+                        <img src="images/project-7.jpg" alt="project-7" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                    <div class="column">
+                        <img src="images/project-8.jpg" alt="project-8" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                </div>
+                
+                <div class="container1" style="text-align: center">
+                    <span onclick="this.parentElement.style.display='none'" class="closebtn" style="color:black">×</span>
+                    <img id="expandedImg"> <!--style="width:100%" -->
+                    <div id="imgtext"></div>
+                </div>
 		</div> <!-- end of container -->
     </div> <!-- end of filter -->
 
@@ -228,115 +285,41 @@
                     </p>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="grid">
-                        <div class="element-item development">
-                            <a class="popup-with-move-anim"><div class="element-item-overlay"><span>Прямой марш</span></span></div><img src="images/stairs-frames-1.jpg" alt="alternative"></a>
-                        </div>
-                        <div class="element-item development">
-                            <a class="popup-with-move-anim"><div class="element-item-overlay"><span>Лестница 90° с площадкой</span></div><img src="images/stairs-frames-2.jpg" alt="alternative"></a>
-                        </div>
-                        <div class="element-item design development marketing">
-                            <a class="popup-with-move-anim"><div class="element-item-overlay"><span>Лестница 90° забежная</span></div><img src="images/stairs-frames-3.jpg" alt="alternative"></a>
-                        </div>
-                        <div class="element-item design development marketing">
-                            <a class="popup-with-move-anim"><div class="element-item-overlay"><span>Лестница 180° забежная</span></div><img src="images/stairs-frames-4.jpg" alt="alternative"></a>
-                        </div>
-                        <div class="element-item design development marketing seo">
-                            <a class="popup-with-move-anim"><div class="element-item-overlay"><span>Лестница 180° забежная в три марша</span></div><img src="images/stairs-frames-5.jpg" alt="alternative"></a>
-                        </div>
-                        <div class="element-item design marketing seo">
-                            <a class="popup-with-move-anim"><div class="element-item-overlay"><span>Лестница 180° с площадкой</span></div><img src="images/stairs-frames-6.png" alt="alternative"></a>
-                        </div>
-                        <div class="element-item design marketing">
-                            <a class="popup-with-move-anim"><div class="element-item-overlay"><span>Лестница на ломаном косоуре</span></div><img src="images/stairs-frames-7.jpg" alt="alternative"></a>
-                        </div>
-                        <div class="element-item design marketing">
-                            <a class="popup-with-move-anim"><div class="element-item-overlay"><span>Лестница на монокосоуре</span></div><img src="images/stairs-frames-8.png" alt="alternative"></a>
-                        </div>
-                    </div> <!-- end of grid -->
-                    <!-- end of filter -->
-
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
+            <div class="row1">
+                <div class="column">
+                    <img src="images/stairs-frames-1.jpg" alt="Прямой марш" style="width:100%" onclick="myFunction1(this);">
+                </div>
+                <div class="column">
+                    <img src="images/stairs-frames-2.jpg" alt="Лестница 90° с площадкой" style="width:100%" onclick="myFunction1(this);">
+                </div>
+                <div class="column">
+                    <img src="images/stairs-frames-3.jpg" alt="Лестница 90° забежная" style="width:100%" onclick="myFunction1(this);">
+                </div>
+                <div class="column">
+                    <img src="images/stairs-frames-4.jpg" alt="Лестница 180° забежная" style="width:100%" onclick="myFunction1(this);">
+                </div>
+                <div class="column">
+                    <img src="images/stairs-frames-5.jpg" alt="Лестница 180° забежная в три марша" style="width:100%" onclick="myFunction1(this);">
+                </div>
+                <div class="column">
+                    <img src="images/stairs-frames-6.png" alt="Лестница 180° с площадкой" style="width:100%" onclick="myFunction1(this);">
+                </div>
+                <div class="column">
+                    <img src="images/stairs-frames-7.jpg" alt="Лестница на ломаном косоуре" style="width:100%" onclick="myFunction1(this);">
+                </div>
+                <div class="column">
+                    <img src="images/stairs-frames-8.png" alt="Лестница на монокосоуре" style="width:100%" onclick="myFunction1(this);">
+                </div>
+            </div>
+            
+            <div class="container1" style="text-align: center">
+                <span onclick="this.parentElement.style.display='none'" class="closebtn" style="color:black">×</span>
+                <img id="expandedImg1"> <!--style="width:100%" -->
+                <div id="imgtext1"></div>
+            </div>
 		</div> <!-- end of container -->
     </div> <!-- end of filter -->
 
-
-    <!-- Project stairs Lightboxes -->
-    <!-- Lightbox -->
-    <div id="project-1" class="lightbox-basic zoom-anim-dialog mfp-hide">
-        <div class="row">
-            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-            <img class="img-fluid" src="images/project-1.jpg" alt="alternative">
-        </div> <!-- end of row -->
-    </div> <!-- end of lightbox-basic -->
-    <!-- end of lightbox -->
-
-    <!-- Lightbox -->
-    <div id="project-2" class="lightbox-basic zoom-anim-dialog mfp-hide">
-        <div class="row">
-            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-            <img class="img-fluid" src="images/project-2.jpg" alt="alternative">
-        </div> <!-- end of row -->
-    </div> <!-- end of lightbox-basic -->
-    <!-- end of lightbox -->
-
-    <!-- Lightbox -->
-    <div id="project-3" class="lightbox-basic zoom-anim-dialog mfp-hide">
-        <div class="row">
-            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-            <img class="img-fluid" src="images/project-3.jpg" alt="alternative">
-        </div> <!-- end of row -->
-    </div> <!-- end of lightbox-basic -->
-    <!-- end of lightbox -->
-
-    <!-- Lightbox -->
-    <div id="project-4" class="lightbox-basic zoom-anim-dialog mfp-hide">
-        <div class="row">
-            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-            <img class="img-fluid" src="images/project-4.jpg" alt="alternative">
-        </div> <!-- end of row -->
-    </div> <!-- end of lightbox-basic -->
-    <!-- end of lightbox -->
-
-    <!-- Lightbox -->
-    <div id="project-5" class="lightbox-basic zoom-anim-dialog mfp-hide">
-        <div class="row">
-            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-            <img class="img-fluid" src="images/project-5.jpg" alt="alternative">
-        </div> <!-- end of row -->
-    </div> <!-- end of lightbox-basic -->
-    <!-- end of lightbox -->
-
-    <!-- Lightbox -->
-    <div id="project-6" class="lightbox-basic zoom-anim-dialog mfp-hide">
-        <div class="row">
-            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-            <img class="img-fluid" src="images/project-6.jpg" alt="alternative">
-        </div> <!-- end of row -->
-    </div> <!-- end of lightbox-basic -->
-    <!-- end of lightbox -->
-
-    <!-- Lightbox -->
-    <div id="project-7" class="lightbox-basic zoom-anim-dialog mfp-hide">
-        <div class="row">
-            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-            <img class="img-fluid" src="images/project-7.jpg" alt="alternative">
-        </div> <!-- end of row -->
-    </div> <!-- end of lightbox-basic -->
-    <!-- end of lightbox -->
-
-    <!-- Lightbox -->
-    <div id="project-8" class="lightbox-basic zoom-anim-dialog mfp-hide">
-        <div class="row">
-            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-            <img class="img-fluid" src="images/project-8.jpg" alt="alternative">
-        </div> <!-- end of row -->
-    </div> <!-- end of lightbox-basic -->
-    <!-- end of lightbox -->
-    <!-- end of project lightboxes -->
 
     <!-- Copyright -->
     <div class="copyright">
@@ -354,6 +337,22 @@
 
 
     <!-- Scripts -->
+    <script>
+        function myFunction(imgs) {
+            var expandImg = document.getElementById("expandedImg");
+            var imgText = document.getElementById("imgtext");
+            expandImg.src = imgs.src;
+            // imgText.innerHTML = imgs.alt;
+            expandImg.parentElement.style.display = "block";
+        }
+        function myFunction1(imgs) {
+            var expandImg = document.getElementById("expandedImg1");
+            var imgText = document.getElementById("imgtext1");
+            expandImg.src = imgs.src;
+            imgText.innerHTML = imgs.alt;
+            expandImg.parentElement.style.display = "block";
+        }
+    </script>
     <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
     <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
     <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
